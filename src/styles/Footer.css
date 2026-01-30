@@ -1,0 +1,18 @@
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--medium-gray);
+    padding: 2rem 0;
+    border-top: 1px solid var(--secondary-blue);
+    text-align: center;
+}
+
+.footer h4 {
+    color: var(--white);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
