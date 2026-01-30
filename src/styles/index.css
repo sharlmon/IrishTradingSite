@@ -2,25 +2,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@500;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
-  /* Brand Colors */
-  --primary-blue: #0f172a; /* Deep Navy */
-  --secondary-blue: #1e293b; /* Slam Navy */
-  --accent-green: #76ff03; /* Neon Safety Green */
-  --accent-gold: #fbbf24; /* Construction Gold/Yellow */
-  
+  /* Brand Colors - Synced with Logo */
+  --primary-blue: #0f172a;
+  /* Deep Navy Background */
+  --brand-blue: #0071bd;
+  /* Logo Blue */
+  --secondary-blue: #1e293b;
+  /* Slate Navy */
+
+  --accent-green: #8cc63f;
+  /* Logo Green */
+  --accent-gold: #f7931e;
+  /* Logo Gold/Orange */
+
   /* Neutral Colors */
   --light-gray: #f8fafc;
   --medium-gray: #94a3b8;
   --dark-text: #334155;
   --white: #ffffff;
-  
+
   /* UI Colors */
-  --glass-bg: rgba(15, 23, 42, 0.85);
+  --glass-bg: rgba(15, 23, 42, 0.9);
   --glass-border: rgba(255, 255, 255, 0.1);
   --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-neon: 0 0 15px rgba(118, 255, 3, 0.4);
+  --shadow-neon: 0 0 15px rgba(140, 198, 63, 0.4);
+  /* Updated to Logo Green */
 
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -46,7 +54,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--primary-blue);
   font-weight: 700;
