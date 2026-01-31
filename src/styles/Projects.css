@@ -35,6 +35,13 @@
     gap: 2rem;
 }
 
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
 .project-card {
     border-radius: 8px;
     overflow: hidden;

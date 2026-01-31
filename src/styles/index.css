@@ -139,8 +139,6 @@ img {
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .section-title::after {
@@ -169,4 +167,19 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #64d902;
+}
+
+/* Mobile Enhancements */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
 }

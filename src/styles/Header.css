@@ -91,6 +91,10 @@
         display: block;
     }
 
+    .logo-img {
+        height: 50px;
+    }
+
     .nav {
         position: absolute;
         top: 100%;
