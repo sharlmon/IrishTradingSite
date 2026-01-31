@@ -3,10 +3,12 @@ import React from 'react';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 import '../styles/Contact.css';
 
+
 const Contact = () => {
     return (
         <section id="contact" className="section-padding contact-section">
-            <div className="container">
+            <div className="logo-watermark"></div>
+            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                 <h2 className="section-title">Get In Touch</h2>
                 <div className="contact-wrapper">
                     <div className="contact-info">
@@ -28,7 +30,6 @@ const Contact = () => {
                             <div>
                                 <h4>Phone</h4>
                                 <p>+254 700 000 000</p>
-                                {/* Placeholder number as none provided in text, user can update */}
                             </div>
                         </div>
 
@@ -58,8 +59,8 @@ const Contact = () => {
                         </div>
                         <div className="form-group">
                             <input type="text" placeholder="Phone Number" />
-                            <input type="text" placeholder="Subject" required />
                         </div>
+                        <input type="text" placeholder="Subject" required className="full-width-input" />
                         <textarea placeholder="Your Message" rows="5" required></textarea>
                         <button type="submit" className="btn btn-primary">Send Message</button>
                     </form>
