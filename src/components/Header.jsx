@@ -22,10 +22,10 @@ const Header = () => {
 
     const navLinks = [
         { title: 'Home', path: '/' },
-        { title: 'About', path: '/about' },
         { title: 'Services', path: '/services' },
         { title: 'Projects', path: '/projects' },
         { title: 'Partners', path: '/partners' },
+        { title: 'About', path: '/about' },
         { title: 'Contact', path: '/contact' },
     ];
 
