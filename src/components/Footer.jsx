@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import '../styles/Footer.css';
 import logo from '../assets/logo.png'; // Updated to use existing logo
 
@@ -17,10 +17,7 @@ const Footer = () => {
                         Committed to quality, safety, and innovation in every project we undertake.
                     </p>
                     <div className="social-links">
-                        <a href="#" className="social-icon" aria-label="Facebook"><FaFacebookF /></a>
-                        <a href="#" className="social-icon" aria-label="Twitter"><FaTwitter /></a>
-                        <a href="#" className="social-icon" aria-label="LinkedIn"><FaLinkedinIn /></a>
-                        <a href="#" className="social-icon" aria-label="Instagram"><FaInstagram /></a>
+                        {/* Social icons removed as per user request */}
                     </div>
                 </div>
 
