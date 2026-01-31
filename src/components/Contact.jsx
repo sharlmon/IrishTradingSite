@@ -10,60 +10,72 @@ const Contact = () => {
             <div className="logo-watermark"></div>
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                 <h2 className="section-title">Get In Touch</h2>
-                <div className="contact-wrapper">
-                    <div className="contact-info">
-                        <h3>Let's Build Something Great Together</h3>
-                        <p>We're ready to listen to your needs and bring your project to life. Contact us today for a consultation.</p>
-
-                        <div className="info-item">
-                            <FaMapMarkerAlt className="info-icon" />
-                            <div>
-                                <h4>Head Office</h4>
-                                <p>Mayfair Center, 4th Floor, Ralph Bunche Road</p>
-                                <p>Upper Hill, Nairobi</p>
-                                <p className="postal">P.O. Box 16159-00100 G.P.O Nairobi</p>
-                            </div>
+                <div className="contact-hub-grid">
+                    {/* Head Office Card */}
+                    <div className="hub-card main-office">
+                        <div className="card-icon-wrapper">
+                            <FaMapMarkerAlt className="hub-icon" />
                         </div>
+                        <h3>Head Office</h3>
+                        <p>Mayfair Center, 4th Floor</p>
+                        <p>Ralph Bunche Road, Upper Hill</p>
+                        <p className="postal">P.O. Box 16159-00100 Nairobi</p>
+                    </div>
 
-                        <div className="info-item">
-                            <FaPhone className="info-icon" />
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+254 700 000 000</p>
-                            </div>
+                    {/* General Inquiry Card */}
+                    <div className="hub-card">
+                        <div className="card-icon-wrapper">
+                            <FaEnvelope className="hub-icon" />
                         </div>
+                        <h3>General Inquiry</h3>
+                        <p>For general questions and information:</p>
+                        <a href="mailto:info@irishtrading.co.ke" className="contact-link">info@irishtrading.co.ke</a>
+                    </div>
 
-                        <div className="info-item">
-                            <FaEnvelope className="info-icon" />
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@irishtrading.co.ke</p>
-                                <p>irishlimited@gmail.com</p>
-                            </div>
+                    {/* Sales Department Card */}
+                    <div className="hub-card">
+                        <div className="card-icon-wrapper">
+                            <FaPhone className="hub-icon" />
                         </div>
+                        <h3>Sales & Projects</h3>
+                        <p>Discuss your upcoming project with us:</p>
+                        <a href="tel:+254700000000" className="contact-link">+254 700 000 000</a>
+                    </div>
 
-                        <div className="info-item">
-                            <FaClock className="info-icon" />
-                            <div>
-                                <h4>Working Hours</h4>
-                                <p>Mon - Fri: 8:00 AM - 5:00 PM</p>
-                                <p>Sat: 8:00 AM - 1:00 PM</p>
-                            </div>
+                    {/* Support Card */}
+                    <div className="hub-card">
+                        <div className="card-icon-wrapper">
+                            <FaEnvelope className="hub-icon" />
+                        </div>
+                        <h3>Customer Support</h3>
+                        <p>Existing client support & services:</p>
+                        <a href="mailto:irishlimited@gmail.com" className="contact-link">irishlimited@gmail.com</a>
+                    </div>
+
+                    {/* Working Hours Card */}
+                    <div className="hub-card">
+                        <div className="card-icon-wrapper">
+                            <FaClock className="hub-icon" />
+                        </div>
+                        <h3>Working Hours</h3>
+                        <div className="hours-row">
+                            <span>Mon - Fri:</span>
+                            <span>8:00 AM - 5:00 PM</span>
+                        </div>
+                        <div className="hours-row">
+                            <span>Saturday:</span>
+                            <span>8:00 AM - 1:00 PM</span>
                         </div>
                     </div>
 
-                    <form className="contact-form">
-                        <div className="form-group">
-                            <input type="text" placeholder="Your Name" required />
-                            <input type="email" placeholder="Your Email" required />
-                        </div>
-                        <div className="form-group">
-                            <input type="text" placeholder="Phone Number" />
-                        </div>
-                        <input type="text" placeholder="Subject" required className="full-width-input" />
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" className="btn btn-primary">Send Message</button>
-                    </form>
+                    {/* CTA Card */}
+                    <div className="hub-card cta-card">
+                        <h3>Ready to Start?</h3>
+                        <p>Let's turn your vision into reality.</p>
+                        <a href="mailto:info@irishtrading.co.ke?subject=Project Inquiry" className="btn btn-primary pulse-btn">
+                            Request a Quote
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
