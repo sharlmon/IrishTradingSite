@@ -121,6 +121,10 @@ const Projects = () => {
                                         <span className="project-category">{project.category}</span>
                                     </div>
                                 </div>
+                                <div className="project-info">
+                                    <h4>{project.title}</h4>
+                                    <p>{project.location}</p>
+                                </div>
                             </motion.div>
                         ))}
                     </AnimatePresence>
