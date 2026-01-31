@@ -40,6 +40,8 @@ import junctionBoxWiring from '../assets/junction-box-wiring.jpg';
 import controlPanelsNight from '../assets/control-panels-night.jpg';
 import flowComputerDisplay from '../assets/flow-computer-display.jpg';
 import pipelineValveGauge from '../assets/pipeline-valve-gauge.jpg';
+import meteringSkidPs14 from '../assets/metering-skid-ps14.jpg';
+import densityMeterInstallation from '../assets/density-meter-installation.jpg';
 
 const projectsData = [
     // Civil Works / Drainage
@@ -89,6 +91,8 @@ const projectsData = [
     { id: 32, category: 'Electrical', image: controlPanelsNight, title: 'Control Panel Installation', location: 'Pipeline Station' },
     { id: 33, category: 'Electrical', image: flowComputerDisplay, title: 'Flow Computer Systems', location: 'Metering Station' },
     { id: 34, category: 'Electrical', image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
+    { id: 35, category: 'Electrical', image: meteringSkidPs14, title: 'PS14 Metering Skid', location: 'Kenya Pipeline Company' },
+    { id: 36, category: 'Electrical', image: densityMeterInstallation, title: 'Density Meter Installation', location: 'Pipeline Station' },
 ];
 
 const Projects = () => {
