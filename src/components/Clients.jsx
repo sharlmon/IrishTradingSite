@@ -1,0 +1,116 @@
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaBuilding, FaRoad, FaIndustry, FaHome, FaGlobe } from 'react-icons/fa';
+import '../styles/Clients.css';
+
+const clientsData = [
+    {
+        name: "Kenya Pipeline Company (KPC)",
+        icon: <FaIndustry />,
+        projects: [
+            {
+                title: "Fire Equipment Stores",
+                description: "Construction of fire equipment stores at PS 14 (Kipevu), PS 5 (Mtito Andei), and PS 9 (Embakasi)",
+                value: "KES 28,510,038.04"
+            },
+            {
+                title: "High Capacity Pumps",
+                description: "Supply of high-capacity portable diesel-driven pumps and reinforced hoses",
+                value: "KES 25,825,460.48"
+            },
+            {
+                title: "Oil Pipeline Instrumentation",
+                description: "Supply, installation, and commissioning of oil pipeline instrumentation skid for Morendat Institute of Oil and Gas",
+                value: "USD 170,705.35"
+            }
+        ]
+    },
+    {
+        name: "County Government of Taita Taveta",
+        icon: <FaBuilding />,
+        projects: [
+            {
+                title: "Jomo Kenyatta High School",
+                description: "Construction of administration block",
+                value: "KES 14,830,500.00"
+            }
+        ]
+    },
+    {
+        name: "GlobalGiving (Kenya Vision 2030)",
+        icon: <FaGlobe />,
+        projects: [
+            {
+                title: "Road Maintenance & Upgrading",
+                description: "Upgrading to bitumen standard and maintenance of Chepareria–Centre Kwanza–Chepkobegh–Kabombo–Tamugh–Chepnyal road",
+                value: "KES 55,987,110.00"
+            }
+        ]
+    },
+    {
+        name: "Jura Construction (Juba Construction)",
+        icon: <FaRoad />,
+        projects: [
+            {
+                title: "Jonglei Government Road Rehabilitation",
+                description: "Irko-Jiang road rehabilitation in Twic East, South Sudan",
+                value: "USD 223,068.00"
+            }
+        ]
+    },
+    {
+        name: "Gridlock Developers",
+        icon: <FaHome />,
+        projects: [
+            {
+                title: "Residential Building",
+                description: "4-bedroom residential building on Kangundo Road",
+                value: "KES 13,000,000.00"
+            }
+        ]
+    }
+];
+
+const Clients = () => {
+    return (
+        <section id="clients" className="section-padding clients-section">
+            <div className="container">
+                <h2 className="section-title">Our Proud Clients</h2>
+                <p className="section-subtitle">
+                    Successfully collaborating with prominent organizations in both public and private sectors
+                </p>
+
+                <div className="clients-grid">
+                    {clientsData.map((client, index) => (
+                        <motion.div
+                            key={index}
+                            className="client-card"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="client-header">
+                                <div className="client-icon">{client.icon}</div>
+                                <h3>{client.name}</h3>
+                            </div>
+
+                            <div className="client-projects">
+                                {client.projects.map((project, pIndex) => (
+                                    <div key={pIndex} className="project-item">
+                                        <h4>{project.title}</h4>
+                                        <p>{project.description}</p>
+                                        <span className="project-value">{project.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Clients;
