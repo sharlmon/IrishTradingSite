@@ -1,18 +1,169 @@
 .footer {
-    background-color: var(--primary-blue);
-    color: var(--medium-gray);
-    padding: 2rem 0;
-    border-top: 1px solid var(--secondary-blue);
-    text-align: center;
+    background-color: var(--primary-color);
+    /* Fallback or use a dark theme color */
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+    /* Deep dark gradient */
+    color: #ffffff;
+    padding-top: 4rem;
+    padding-bottom: 0;
+    margin-top: auto;
+    /* Push to bottom if content is short, though rarely needed here */
+    font-size: 0.95rem;
 }
 
-.footer h4 {
-    color: var(--white);
-    font-size: 1rem;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    /* 3 columns preferred for space */
+    gap: 3rem;
+    padding-bottom: 3rem;
 }
 
-.footer p {
-    font-size: 0.9rem;
+.footer-col h3,
+.footer-col h4 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    /* Highlight color */
+}
+
+/* Company Logos & Desc */
+.footer-logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-logo-text span {
+    color: var(--secondary-color);
+}
+
+.footer-desc {
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 350px;
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.social-icon:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Quick Links */
+.footer-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--secondary-color);
+    padding-left: 5px;
+    /* Subtle slide effect */
+}
+
+/* Contact List */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-icon {
+    color: var(--secondary-color);
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+
+.contact-list a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+        gap: 2rem;
+    }
+
+    .bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .footer-col h4::after {
+        left: 0;
+        /* Align left even on mobile for consistency, or standard center if text centered */
+    }
 }
