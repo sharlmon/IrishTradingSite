@@ -34,6 +34,13 @@ import warehouseBuildingFront from '../assets/warehouse-building-front.jpg';
 import rebarGridHeavy from '../assets/rebar-grid-heavy.jpg';
 import buildingFrameConstruction from '../assets/building-frame-construction.jpg';
 
+// Electrical / Instrumentation
+import pipelineInstrumentation from '../assets/pipeline-instrumentation-1.jpg';
+import junctionBoxWiring from '../assets/junction-box-wiring.jpg';
+import controlPanelsNight from '../assets/control-panels-night.jpg';
+import flowComputerDisplay from '../assets/flow-computer-display.jpg';
+import pipelineValveGauge from '../assets/pipeline-valve-gauge.jpg';
+
 const projectsData = [
     // Civil Works / Drainage
     { id: 1, category: 'Civil', image: constructionSlab, title: 'Concrete Slab Foundation', location: 'Commercial Site' },
@@ -75,6 +82,13 @@ const projectsData = [
     // Building Projects
     { id: 28, category: 'Building', image: warehouseBuildingFront, title: 'Modern Warehouse', location: 'Logistics Park' },
     { id: 29, category: 'Building', image: buildingFrameConstruction, title: 'Multi-Story Framework', location: 'Commercial Complex' },
+
+    // Electrical / Instrumentation - Kenya Pipeline Company
+    { id: 30, category: 'Electrical', image: pipelineInstrumentation, title: 'Pipeline Instrumentation', location: 'KPC Oil Pipeline' },
+    { id: 31, category: 'Electrical', image: junctionBoxWiring, title: 'Industrial Junction Box', location: 'Control Systems' },
+    { id: 32, category: 'Electrical', image: controlPanelsNight, title: 'Control Panel Installation', location: 'Pipeline Station' },
+    { id: 33, category: 'Electrical', image: flowComputerDisplay, title: 'Flow Computer Systems', location: 'Metering Station' },
+    { id: 34, category: 'Electrical', image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
 ];
 
 const Projects = () => {
@@ -90,7 +104,7 @@ const Projects = () => {
                 <h2 className="section-title">Featured Projects</h2>
 
                 <div className="projects-filter">
-                    {['All', 'Civil', 'Building', 'Roads', 'Structural'].map(cat => (
+                    {['All', 'Civil', 'Building', 'Roads', 'Structural', 'Electrical'].map(cat => (
                         <button
                             key={cat}
                             className={`filter-btn ${filter === cat ? 'active' : ''}`}
