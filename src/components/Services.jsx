@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FaRoad, FaBuilding, FaTint, FaBolt, FaCogs, FaTruckLoading, FaVideo, FaLock } from 'react-icons/fa';
+import { FaRoad, FaBuilding, FaTint, FaBolt, FaCogs, FaTruckLoading, FaVideo, FaLock, FaSolarPanel } from 'react-icons/fa';
 import '../styles/Services.css';
 
 const servicesData = [
@@ -43,6 +43,11 @@ const servicesData = [
         icon: <FaLock />,
         title: "Access Control",
         description: "Modern access control solutions including biometric systems, card readers, and security gates."
+    },
+    {
+        icon: <FaSolarPanel />,
+        title: "Solar & Green Energy",
+        description: "Sustainable energy solutions including solar panel installation, green power systems, and energy efficiency consulting."
     }
 ];
 
