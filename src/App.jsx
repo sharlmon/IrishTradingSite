@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,31 +10,57 @@ import Clients from './components/Clients';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import PageTransition from './components/PageTransition';
 import './styles/index.css';
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <PageTransition>
+            <Hero />
+          </PageTransition>
+        } />
+        <Route path="/about" element={
+          <PageTransition>
+            <About />
+          </PageTransition>
+        } />
+        <Route path="/services" element={
+          <PageTransition>
+            <Services />
+          </PageTransition>
+        } />
+        <Route path="/projects" element={
+          <PageTransition>
+            <Projects />
+          </PageTransition>
+        } />
+        <Route path="/partners" element={
+          <PageTransition>
+            <Clients />
+          </PageTransition>
+        } />
+        <Route path="/contact" element={
+          <PageTransition>
+            <Contact />
+          </PageTransition>
+        } />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 function App() {
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }} basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="App">
         <Header />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              {/* Clients might be good to keep on home as social proof, or move to its own page. 
-                  Based on user request "all buttons in the menu", Partners is a menu item.
-                  I will map it to /partners. Left it here if they want a landing page feel, 
-                  but strictly adhering to separate pages for now.
-               */}
-            </>
-          } />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/partners" element={<Clients />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <AnimatedRoutes />
         <Footer />
       </div>
     </Router>

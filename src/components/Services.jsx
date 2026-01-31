@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FaRoad, FaBuilding, FaTint, FaBolt, FaCogs, FaTruckLoading, FaVideo, FaLock, FaSolarPanel } from 'react-icons/fa';
 import '../styles/Services.css';
 
@@ -51,22 +52,51 @@ const servicesData = [
     }
 ];
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
 const Services = () => {
     return (
         <section id="services" className="section-padding services-section">
             <div className="container">
-                <h2 className="section-title">Our Capabilities</h2>
-                <div className="services-grid">
+                <motion.h2
+                    className="section-title"
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    Our Capabilities
+                </motion.h2>
+                <motion.div
+                    className="services-grid"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                >
                     {servicesData.map((service, index) => (
-                        <div key={index} className="service-card">
+                        <motion.div key={index} className="service-card" variants={itemVariants}>
                             <div className="icon-wrapper">
                                 {service.icon}
                             </div>
                             <h3>{service.title}</h3>
                             <p>{service.description}</p>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
