@@ -42,6 +42,9 @@ import flowComputerDisplay from '../assets/flow-computer-display.jpg';
 import pipelineValveGauge from '../assets/pipeline-valve-gauge.jpg';
 import meteringSkidPs14 from '../assets/metering-skid-ps14.jpg';
 import densityMeterInstallation from '../assets/density-meter-installation.jpg';
+import flowMeterBlue from '../assets/flow-meter-blue.jpg';
+import skidWiringWork from '../assets/skid-wiring-work.jpg';
+import controlPanelWiring from '../assets/control-panel-wiring.jpg';
 
 const projectsData = [
     // Civil Works / Drainage
@@ -93,6 +96,9 @@ const projectsData = [
     { id: 34, category: 'Electrical', image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
     { id: 35, category: 'Electrical', image: meteringSkidPs14, title: 'PS14 Metering Skid', location: 'Kenya Pipeline Company' },
     { id: 36, category: 'Electrical', image: densityMeterInstallation, title: 'Density Meter Installation', location: 'Pipeline Station' },
+    { id: 37, category: 'Electrical', image: flowMeterBlue, title: 'Flow Meter Assembly', location: 'Morendat Institute' },
+    { id: 38, category: 'Electrical', image: skidWiringWork, title: 'Skid Wiring Work', location: 'Mobile Instrumentation' },
+    { id: 39, category: 'Electrical', image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
 ];
 
 const Projects = () => {
