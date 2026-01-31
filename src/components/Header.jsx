@@ -31,7 +31,7 @@ const Header = () => {
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="container header-container">
                 <a href="#home" className="logo-link">
-                    <span className="logo-text">IRISH TRADING</span>
+                    <img src="/logo-new.jpg" alt="Irish Trading Enterprises" className="logo-img" />
                 </a>
 
                 <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
