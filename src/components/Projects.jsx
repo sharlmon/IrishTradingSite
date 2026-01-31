@@ -101,12 +101,28 @@ const projectsData = [
     { id: 39, category: 'Electrical', image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
 ];
 
+const INITIAL_SHOW_COUNT = 8;
+
 const Projects = () => {
     const [filter, setFilter] = useState('All');
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const filteredProjects = filter === 'All'
         ? projectsData
         : projectsData.filter(project => project.category === filter);
+
+    // Show limited projects unless expanded
+    const displayedProjects = isExpanded
+        ? filteredProjects
+        : filteredProjects.slice(0, INITIAL_SHOW_COUNT);
+
+    const hasMoreProjects = filteredProjects.length > INITIAL_SHOW_COUNT;
+
+    // Reset expansion when filter changes
+    const handleFilterChange = (cat) => {
+        setFilter(cat);
+        setIsExpanded(false);
+    };
 
     return (
         <section id="projects" className="section-padding projects-section">
@@ -118,7 +134,7 @@ const Projects = () => {
                         <button
                             key={cat}
                             className={`filter-btn ${filter === cat ? 'active' : ''}`}
-                            onClick={() => setFilter(cat)}
+                            onClick={() => handleFilterChange(cat)}
                         >
                             {cat}
                         </button>
@@ -127,7 +143,7 @@ const Projects = () => {
 
                 <motion.div layout className="projects-grid">
                     <AnimatePresence>
-                        {filteredProjects.map(project => (
+                        {displayedProjects.map(project => (
                             <motion.div
                                 layout
                                 initial={{ opacity: 0, scale: 0.9 }}
@@ -153,9 +169,30 @@ const Projects = () => {
                         ))}
                     </AnimatePresence>
                 </motion.div>
+
+                {hasMoreProjects && (
+                    <motion.div
+                        className="projects-expand-container"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        <button
+                            className="expand-btn"
+                            onClick={() => setIsExpanded(!isExpanded)}
+                        >
+                            {isExpanded ? (
+                                <>Show Less ↑</>
+                            ) : (
+                                <>Show More ({filteredProjects.length - INITIAL_SHOW_COUNT} more) ↓</>
+                            )}
+                        </button>
+                    </motion.div>
+                )}
             </div>
         </section>
     );
 };
 
 export default Projects;
+
