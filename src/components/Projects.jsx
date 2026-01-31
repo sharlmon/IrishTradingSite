@@ -89,19 +89,19 @@ const projectsData = [
     { id: 29, category: 'Building', image: buildingFrameConstruction, title: 'Multi-Story Framework', location: 'Commercial Complex' },
 
     // Electrical / Instrumentation - Kenya Pipeline Company
-    { id: 30, category: 'Electrical', image: pipelineInstrumentation, title: 'Pipeline Instrumentation', location: 'KPC Oil Pipeline' },
-    { id: 31, category: 'Electrical', image: junctionBoxWiring, title: 'Industrial Junction Box', location: 'Control Systems' },
-    { id: 32, category: 'Electrical', image: controlPanelsNight, title: 'Control Panel Installation', location: 'Pipeline Station' },
-    { id: 33, category: 'Electrical', image: flowComputerDisplay, title: 'Flow Computer Systems', location: 'Metering Station' },
-    { id: 34, category: 'Electrical', image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
-    { id: 35, category: 'Electrical', image: meteringSkidPs14, title: 'PS14 Metering Skid', location: 'Kenya Pipeline Company' },
-    { id: 36, category: 'Electrical', image: densityMeterInstallation, title: 'Density Meter Installation', location: 'Pipeline Station' },
-    { id: 37, category: 'Electrical', image: flowMeterBlue, title: 'Flow Meter Assembly', location: 'Morendat Institute' },
-    { id: 38, category: 'Electrical', image: skidWiringWork, title: 'Skid Wiring Work', location: 'Mobile Instrumentation' },
-    { id: 39, category: 'Electrical', image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
+    { id: 30, category: 'Electrical & Pipeline', image: pipelineInstrumentation, title: 'Pipeline Instrumentation', location: 'KPC Oil Pipeline' },
+    { id: 31, category: 'Electrical & Pipeline', image: junctionBoxWiring, title: 'Industrial Junction Box', location: 'Control Systems' },
+    { id: 32, category: 'Electrical & Pipeline', image: controlPanelsNight, title: 'Control Panel Installation', location: 'Pipeline Station' },
+    { id: 33, category: 'Electrical & Pipeline', image: flowComputerDisplay, title: 'Flow Computer Systems', location: 'Metering Station' },
+    { id: 34, category: 'Electrical & Pipeline', image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
+    { id: 35, category: 'Electrical & Pipeline', image: meteringSkidPs14, title: 'PS14 Metering Skid', location: 'Kenya Pipeline Company' },
+    { id: 36, category: 'Electrical & Pipeline', image: densityMeterInstallation, title: 'Density Meter Installation', location: 'Pipeline Station' },
+    { id: 37, category: 'Electrical & Pipeline', image: flowMeterBlue, title: 'Flow Meter Assembly', location: 'Morendat Institute' },
+    { id: 38, category: 'Electrical & Pipeline', image: skidWiringWork, title: 'Skid Wiring Work', location: 'Mobile Instrumentation' },
+    { id: 39, category: 'Electrical & Pipeline', image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
 ];
 
-const INITIAL_SHOW_COUNT = 8;
+const INITIAL_SHOW_COUNT = 2;
 
 const Projects = () => {
     const [filter, setFilter] = useState('All');
@@ -130,7 +130,7 @@ const Projects = () => {
                 <h2 className="section-title">Featured Projects</h2>
 
                 <div className="projects-filter">
-                    {['All', 'Civil', 'Building', 'Roads', 'Structural', 'Electrical'].map(cat => (
+                    {['All', 'Civil', 'Building', 'Roads', 'Structural', 'Electrical & Pipeline'].map(cat => (
                         <button
                             key={cat}
                             className={`filter-btn ${filter === cat ? 'active' : ''}`}
