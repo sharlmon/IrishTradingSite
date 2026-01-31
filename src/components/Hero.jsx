@@ -1,5 +1,5 @@
 
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../styles/Hero.css';
 import heroBg from '../assets/rebar-sky.jpg'; // Using the artistic rebar shot for the hero
@@ -22,8 +22,8 @@ const Hero = () => {
                         Quality, Safety, and Innovation in every project.
                     </p>
                     <div className="hero-actions">
-                        <a href="#projects" className="btn btn-primary">View Our Projects</a>
-                        <a href="#contact" className="btn btn-outline">Contact Us</a>
+                        <Link to="/projects" className="btn btn-primary">View Our Projects</Link>
+                        <Link to="/contact" className="btn btn-outline">Contact Us</Link>
                     </div>
                 </motion.div>
             </div>

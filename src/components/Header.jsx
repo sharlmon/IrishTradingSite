@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaPhoneAlt } from 'react-icons/fa';
 import '../styles/Header.css';
 import logo from '../assets/logo.png';
@@ -7,6 +7,7 @@ import logo from '../assets/logo.png';
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,34 +21,38 @@ const Header = () => {
     const closeMenu = () => setIsMobileMenuOpen(false);
 
     const navLinks = [
-        { title: 'Home', href: '#home' },
-        { title: 'About', href: '#about' },
-        { title: 'Services', href: '#services' },
-        { title: 'Projects', href: '#projects' },
-        { title: 'Partners', href: '#clients' },
-        { title: 'Contact', href: '#contact' },
+        { title: 'Home', path: '/' },
+        { title: 'About', path: '/about' },
+        { title: 'Services', path: '/services' },
+        { title: 'Projects', path: '/projects' },
+        { title: 'Partners', path: '/partners' },
+        { title: 'Contact', path: '/contact' },
     ];
 
     return (
-        <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <header className={`header ${isScrolled || location.pathname !== '/' ? 'scrolled' : ''}`}>
             <div className="container header-container">
-                <a href="#home" className="logo-link">
+                <Link to="/" className="logo-link">
                     <img src={`${import.meta.env.BASE_URL}logo-header.png`} alt="Irish Trading Enterprises" className="logo-img" />
-                </a>
+                </Link>
 
                 <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
                     <ul className="nav-list">
                         {navLinks.map((link) => (
                             <li key={link.title} className="nav-item">
-                                <a href={link.href} className="nav-link" onClick={closeMenu}>
+                                <NavLink
+                                    to={link.path}
+                                    className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                                    onClick={closeMenu}
+                                >
                                     {link.title}
-                                </a>
+                                </NavLink>
                             </li>
                         ))}
                     </ul>
-                    <a href="#contact" className="btn btn-primary header-cta" onClick={closeMenu}>
+                    <Link to="/contact" className="btn btn-primary header-cta" onClick={closeMenu}>
                         <FaPhoneAlt style={{ marginRight: '8px' }} /> Get Quote
-                    </a>
+                    </Link>
                 </nav>
 
                 <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
