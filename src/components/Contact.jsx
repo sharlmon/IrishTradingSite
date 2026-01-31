@@ -29,7 +29,7 @@ const Contact = () => {
                         </div>
                         <h3>General Inquiry</h3>
                         <p>For general questions and information:</p>
-                        <a href="mailto:info@irishtrading.co.ke" className="contact-link">info@irishtrading.co.ke</a>
+                        <a href="mailto:abdura@irishtrading.co.ke" className="contact-link">abdura@irishtrading.co.ke</a>
                     </div>
 
                     {/* Sales Department Card */}
@@ -39,7 +39,10 @@ const Contact = () => {
                         </div>
                         <h3>Sales & Projects</h3>
                         <p>Discuss your upcoming project with us:</p>
-                        <a href="tel:+254700000000" className="contact-link">+254 700 000 000</a>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                            <a href="tel:+254722131308" className="contact-link">0722 131 308</a>
+                            <a href="tel:+254734131308" className="contact-link">0734 131 308</a>
+                        </div>
                     </div>
 
                     {/* Support Card */}
@@ -49,7 +52,7 @@ const Contact = () => {
                         </div>
                         <h3>Customer Support</h3>
                         <p>Existing client support & services:</p>
-                        <a href="mailto:irishlimited@gmail.com" className="contact-link">irishlimited@gmail.com</a>
+                        <a href="mailto:abdura@irishtrading.co.ke" className="contact-link">abdura@irishtrading.co.ke</a>
                     </div>
 
                     {/* Working Hours Card */}
@@ -72,7 +75,7 @@ const Contact = () => {
                     <div className="hub-card cta-card">
                         <h3>Ready to Start?</h3>
                         <p>Let's turn your vision into reality.</p>
-                        <a href="mailto:info@irishtrading.co.ke?subject=Project Inquiry" className="btn btn-primary pulse-btn">
+                        <a href="mailto:abdura@irishtrading.co.ke?subject=Project Inquiry" className="btn btn-primary pulse-btn">
                             Request a Quote
                         </a>
                     </div>
