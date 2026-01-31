@@ -101,7 +101,6 @@ const Clients = () => {
                                     <div key={pIndex} className="project-item">
                                         <h4>{project.title}</h4>
                                         <p>{project.description}</p>
-                                        <span className="project-value">{project.value}</span>
                                     </div>
                                 ))}
                             </div>
