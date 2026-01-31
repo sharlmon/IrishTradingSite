@@ -182,7 +182,8 @@ img {
   }
 
   .section-padding {
-    padding: 3rem 0;
+    padding: 10rem 0 3rem 0;
+    /* Increased to 10rem (~160px) to absolutely clear mobile header */
   }
 
   .section-title {

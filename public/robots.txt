@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://irishtrading.co.ke/sitemap.xml
