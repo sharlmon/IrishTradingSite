@@ -41,13 +41,18 @@ const Footer = () => {
                         <li>
                             <FaMapMarkerAlt className="contact-icon" />
                             <span>
-                                P.O. Box 1234 - 00100,<br />
-                                Nairobi, Kenya
+                                Mayfair Center, 4th Floor<br />
+                                Ralph Bunche Road, Upper Hill<br />
+                                P.O. Box 16159-00100 Nairobi
                             </span>
                         </li>
                         <li>
                             <FaPhoneAlt className="contact-icon" />
-                            <a href="tel:+254700000000">+254 700 000 000</a>
+                            <div className="footer-phones">
+                                <a href="tel:+254722131308">0722 131 308</a>
+                                <span className="phone-separator"> / </span>
+                                <a href="tel:+254734131308">0734 131 308</a>
+                            </div>
                         </li>
                         <li>
                             <FaEnvelope className="contact-icon" />
