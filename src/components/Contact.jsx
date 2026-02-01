@@ -61,8 +61,8 @@ const Contact = () => {
                             <h3>Sales & Projects</h3>
                             <p>Start your project:</p>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                                <a href="tel:+254722131308" className="contact-link">0722 131 308</a>
-                                <a href="tel:+254734131308" className="contact-link">0734 131 308</a>
+                                <a href="tel:+254722131308" className="contact-link">+254 722 131 308</a>
+                                <a href="tel:+254734131308" className="contact-link">+254 734 131 308</a>
                             </div>
                         </div>
 

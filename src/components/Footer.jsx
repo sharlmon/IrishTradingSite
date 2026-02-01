@@ -49,9 +49,9 @@ const Footer = () => {
                         <li>
                             <FaPhoneAlt className="contact-icon" />
                             <div className="footer-phones">
-                                <a href="tel:+254722131308">0722 131 308</a>
+                                <a href="tel:+254722131308">+254 722 131 308</a>
                                 <span className="phone-separator"> / </span>
-                                <a href="tel:+254734131308">0734 131 308</a>
+                                <a href="tel:+254734131308">+254 734 131 308</a>
                             </div>
                         </li>
                         <li>
