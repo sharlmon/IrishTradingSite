@@ -45,6 +45,8 @@ import densityMeterInstallation from '../assets/density-meter-installation.jpg';
 import flowMeterBlue from '../assets/flow-meter-blue.jpg';
 import skidWiringWork from '../assets/skid-wiring-work.jpg';
 import controlPanelWiring from '../assets/control-panel-wiring.jpg';
+import cctvInstallation from '../assets/cctv-installation.png';
+import accessControlSystem from '../assets/access-control-system.png';
 
 const projectsData = [
     // Civil Works / Drainage
@@ -99,6 +101,10 @@ const projectsData = [
     { id: 37, category: 'Electrical & Pipeline', image: flowMeterBlue, title: 'Flow Meter Assembly', location: 'Morendat Institute' },
     { id: 38, category: 'Electrical & Pipeline', image: skidWiringWork, title: 'Skid Wiring Work', location: 'Mobile Instrumentation' },
     { id: 39, category: 'Electrical & Pipeline', image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
+
+    // CCTV & Access Control
+    { id: 40, category: 'CCTV & Access Control', image: cctvInstallation, title: 'Site Surveillance System', location: 'Commercial Complex' },
+    { id: 41, category: 'CCTV & Access Control', image: accessControlSystem, title: 'Biometric Access Control', location: 'Corporate HQ' },
 ];
 
 const INITIAL_SHOW_COUNT = 2;
@@ -130,7 +136,7 @@ const Projects = () => {
                 <h2 className="section-title">Featured Projects</h2>
 
                 <div className="projects-filter">
-                    {['All', 'Civil', 'Building', 'Roads', 'Structural', 'Electrical & Pipeline'].map(cat => (
+                    {['All', 'Civil', 'Building', 'Roads', 'Structural', 'Electrical & Pipeline', 'CCTV & Access Control'].map(cat => (
                         <button
                             key={cat}
                             className={`filter-btn ${filter === cat ? 'active' : ''}`}

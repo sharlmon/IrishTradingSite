@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBuilding, FaRoad, FaIndustry, FaHome, FaGlobe } from 'react-icons/fa';
+import { FaBuilding, FaRoad, FaIndustry, FaHome, FaGlobe, FaAnchor } from 'react-icons/fa';
 import '../styles/Clients.css';
 
 const clientsData = [
@@ -10,19 +10,30 @@ const clientsData = [
         icon: <FaIndustry />,
         projects: [
             {
+                title: "Security Fence Construction",
+                description: "Construction of security fence around Port Reitz Tankfarm"
+            },
+            {
                 title: "Fire Equipment Stores",
-                description: "Construction of fire equipment stores at PS 14 (Kipevu), PS 5 (Mtito Andei), and PS 9 (Embakasi)",
-                value: "KES 28,510,038.04"
+                description: "Construction of fire equipment stores at PS 14 (Kipevu), PS 5 (Mtito Andei), and PS 9 (Embakasi)"
             },
             {
                 title: "High Capacity Pumps",
-                description: "Supply of high-capacity portable diesel-driven pumps and reinforced hoses",
-                value: "KES 25,825,460.48"
+                description: "Supply of high-capacity portable diesel-driven pumps and reinforced hoses"
             },
             {
                 title: "Oil Pipeline Instrumentation",
-                description: "Supply, installation, and commissioning of oil pipeline instrumentation skid for Morendat Institute of Oil and Gas",
-                value: "USD 170,705.35"
+                description: "Supply, installation, and commissioning of oil pipeline instrumentation skid for Morendat Institute of Oil and Gas"
+            }
+        ]
+    },
+    {
+        name: "Kenya Ports Authority (KPA)",
+        icon: <FaAnchor />,
+        projects: [
+            {
+                title: "Framework Agreement for Concrete Works",
+                description: "Framework agreement for concrete works on a call-off order basis"
             }
         ]
     },
@@ -32,8 +43,7 @@ const clientsData = [
         projects: [
             {
                 title: "Jomo Kenyatta High School",
-                description: "Construction of administration block",
-                value: "KES 14,830,500.00"
+                description: "Construction of administration block"
             }
         ]
     },
@@ -43,8 +53,7 @@ const clientsData = [
         projects: [
             {
                 title: "Road Maintenance & Upgrading",
-                description: "Upgrading to bitumen standard and maintenance of Chepareria–Centre Kwanza–Chepkobegh–Kabombo–Tamugh–Chepnyal road",
-                value: "KES 55,987,110.00"
+                description: "Upgrading to bitumen standard and maintenance of Chepareria–Centre Kwanza–Chepkobegh–Kabombo–Tamugh–Chepnyal road"
             }
         ]
     },
@@ -54,8 +63,7 @@ const clientsData = [
         projects: [
             {
                 title: "Jonglei Government Road Rehabilitation",
-                description: "Irko-Jiang road rehabilitation in Twic East, South Sudan",
-                value: "USD 223,068.00"
+                description: "Irko-Jiang road rehabilitation in Twic East, South Sudan"
             }
         ]
     },
@@ -65,8 +73,7 @@ const clientsData = [
         projects: [
             {
                 title: "Residential Building",
-                description: "4-bedroom residential building on Kangundo Road",
-                value: "KES 13,000,000.00"
+                description: "4-bedroom residential building on Kangundo Road"
             }
         ]
     }
