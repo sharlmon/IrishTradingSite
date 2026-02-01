@@ -125,3 +125,32 @@
         text-align: center;
     }
 }
+
+/* Desktop Specifics */
+@media (min-width: 969px) {
+    .header-container {
+        padding: 0 1rem;
+        /* Extra breathing room */
+    }
+
+    .nav-list {
+        gap: 2.5rem;
+        /* More spacing between items */
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        /* Slightly larger text */
+    }
+
+    .header-cta {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(140, 198, 63, 0.4);
+    }
+}

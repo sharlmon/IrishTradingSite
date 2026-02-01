@@ -167,3 +167,26 @@
         /* Align left even on mobile for consistency, or standard center if text centered */
     }
 }
+
+/* Desktop Enhancements */
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 0.8fr 1.2fr;
+        /* More balanced ratios for desktop */
+        gap: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .footer-desc {
+        font-size: 1rem;
+        max-width: 400px;
+    }
+
+    .footer-nav li {
+        margin-bottom: 1rem;
+    }
+
+    .contact-list li {
+        margin-bottom: 1.2rem;
+    }
+}
