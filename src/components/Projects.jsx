@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaBuilding, FaRoad, FaIndustry, FaHome, FaGlobe, FaAnchor, FaHardHat } from 'react-icons/fa';
 import '../styles/Projects.css';
 
 // Import project images
@@ -48,153 +48,125 @@ import controlPanelWiring from '../assets/control-panel-wiring.jpg';
 import cctvInstallation from '../assets/cctv-installation.png';
 import accessControlSystem from '../assets/access-control-system.png';
 
-const projectsData = [
-    // Civil Works / Drainage
-    { id: 1, category: 'Civil', image: constructionSlab, title: 'Concrete Slab Foundation', location: 'Commercial Site' },
-    { id: 2, category: 'Civil', image: drainageWorkers, title: 'Drainage Channel Construction', location: 'Infrastructure Project' },
-    { id: 3, category: 'Civil', image: stoneDrainage, title: 'Stone Pitching Work', location: 'Roadside Drainage' },
-    { id: 4, category: 'Civil', image: completedDrainage1, title: 'Completed Stone Drain', location: 'Urban Road' },
-    { id: 5, category: 'Civil', image: completedDrainage2, title: 'Drainage Systems', location: 'Highway Section' },
-    { id: 6, category: 'Civil', image: stoneLinedDitch, title: 'Stone Lined Ditch', location: 'Rural Access Road' },
-    { id: 7, category: 'Civil', image: deepStoneDrainage, title: 'Deep Drainage Channel', location: 'Flood Control' },
-    { id: 8, category: 'Civil', image: roadEdgeDrainage, title: 'Roadside Drainage', location: 'Access Road' },
-
-    // Road Construction - Excavation & Prep
-    { id: 9, category: 'Roads', image: roadWetting, title: 'Base Preparation', location: 'Site Preparation' },
-    { id: 10, category: 'Roads', image: roadShoulderWork, title: 'Road Shoulder Stabilization', location: 'Access Road' },
-    { id: 11, category: 'Roads', image: handPackingRoadEdge, title: 'Manual Edge Packing', location: 'Community Road' },
-
-    // Road Construction - Paving & Compaction
-    { id: 12, category: 'Roads', image: asphaltPaver, title: 'Asphalt Paving', location: 'Main Highway' },
-    { id: 13, category: 'Roads', image: asphaltSpreading, title: 'Asphalt Spreading', location: 'Road Surfacing' },
-    { id: 14, category: 'Roads', image: roadCompaction, title: 'Primary Compaction', location: 'Tarmac Layer' },
-    { id: 15, category: 'Roads', image: heavyRollerCompaction, title: 'Heavy Roller Compaction', location: 'Final Layer' },
-    { id: 16, category: 'Roads', image: smallRollerCompaction, title: 'Finish Compaction', location: 'Driveway' },
-    { id: 17, category: 'Roads', image: largeRollerFinishing, title: 'Surface Finishing', location: 'Main Road' },
-
-    // Finished Projects
-    { id: 18, category: 'Roads', image: finishedTarmacCurve, title: 'Curved Access Road', location: 'Completed Project' },
-    { id: 19, category: 'Roads', image: finishedRoadGuardrails1, title: 'Road with Guardrails', location: 'Scenic Route' },
-    { id: 20, category: 'Roads', image: finishedRoadGuardrails2, title: 'Safety Barriers', location: 'Highway Section' },
-    { id: 21, category: 'Roads', image: finishedRoadStraight, title: 'Straight Tarmac Road', location: 'Development Access' },
-    { id: 22, category: 'Roads', image: roadMarkingsFinished, title: 'Road Marking', location: 'Traffic Safety' },
-    { id: 23, category: 'Roads', image: curvedTarmacRoadCloseup, title: 'Quality Surfacing', location: 'Detail View' },
-    { id: 24, category: 'Roads', image: walkingOnFinishedRoad, title: 'Project Inspection', location: 'Handover Phase' },
-
-    // Structural Works
-    { id: 25, category: 'Structural', image: rebarSlabLarge, title: 'Heavy Rebar Reinforcement', location: 'Industrial Foundation' },
-    { id: 26, category: 'Structural', image: rebarGridHeavy, title: 'Steel Grid Work', location: 'Construction Site' },
-    { id: 27, category: 'Structural', image: workersFoundationTanks, title: 'Foundation & Tanks', location: 'Processing Plant' },
-
-    // Building Projects
-    { id: 28, category: 'Building', image: warehouseBuildingFront, title: 'Modern Warehouse', location: 'Logistics Park' },
-    { id: 29, category: 'Building', image: buildingFrameConstruction, title: 'Multi-Story Framework', location: 'Commercial Complex' },
-
-    // Electrical / Instrumentation - Kenya Pipeline Company
-    { id: 30, category: 'Electrical & Pipeline', image: pipelineInstrumentation, title: 'Pipeline Instrumentation', location: 'KPC Oil Pipeline' },
-    { id: 31, category: 'Electrical & Pipeline', image: junctionBoxWiring, title: 'Industrial Junction Box', location: 'Control Systems' },
-    { id: 32, category: 'Electrical & Pipeline', image: controlPanelsNight, title: 'Control Panel Installation', location: 'Pipeline Station' },
-    { id: 33, category: 'Electrical & Pipeline', image: flowComputerDisplay, title: 'Flow Computer Systems', location: 'Metering Station' },
-    { id: 34, category: 'Electrical & Pipeline', image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
-    { id: 35, category: 'Electrical & Pipeline', image: meteringSkidPs14, title: 'PS14 Metering Skid', location: 'Kenya Pipeline Company' },
-    { id: 36, category: 'Electrical & Pipeline', image: densityMeterInstallation, title: 'Density Meter Installation', location: 'Pipeline Station' },
-    { id: 37, category: 'Electrical & Pipeline', image: flowMeterBlue, title: 'Flow Meter Assembly', location: 'Morendat Institute' },
-    { id: 38, category: 'Electrical & Pipeline', image: skidWiringWork, title: 'Skid Wiring Work', location: 'Mobile Instrumentation' },
-    { id: 39, category: 'Electrical & Pipeline', image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
-
-    // CCTV & Access Control
-    { id: 40, category: 'CCTV & Access Control', image: cctvInstallation, title: 'Site Surveillance System', location: 'Commercial Complex' },
-    { id: 41, category: 'CCTV & Access Control', image: accessControlSystem, title: 'Biometric Access Control', location: 'Corporate HQ' },
+const clientGroups = [
+    {
+        id: 'kpc',
+        name: "Kenya Pipeline Company (KPC)",
+        icon: <FaIndustry />,
+        description: "Partnering on critical infrastructure, security systems, and pipeline instrumentation.",
+        projects: [
+            { id: 40, image: cctvInstallation, title: 'Site Surveillance System', location: 'Commercial Complex' },
+            { id: 41, image: accessControlSystem, title: 'Biometric Access Control', location: 'Corporate HQ' },
+            { id: 30, image: pipelineInstrumentation, title: 'Pipeline Instrumentation', location: 'KPC Oil Pipeline' },
+            { id: 31, image: junctionBoxWiring, title: 'Industrial Junction Box', location: 'Control Systems' },
+            { id: 32, image: controlPanelsNight, title: 'Control Panel Installation', location: 'Pipeline Station' },
+            { id: 33, image: flowComputerDisplay, title: 'Flow Computer Systems', location: 'Metering Station' },
+            { id: 34, image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
+            { id: 35, image: meteringSkidPs14, title: 'PS14 Metering Skid', location: 'Kenya Pipeline Company' },
+            { id: 36, image: densityMeterInstallation, title: 'Density Meter Installation', location: 'Pipeline Station' },
+            { id: 37, image: flowMeterBlue, title: 'Flow Meter Assembly', location: 'Morendat Institute' },
+            { id: 39, image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
+        ]
+    },
+    {
+        id: 'kpa',
+        name: "Kenya Ports Authority (KPA)",
+        icon: <FaAnchor />,
+        description: "Framework agreement for concrete works and port infrastructure.",
+        projects: [
+            // Placeholder or reuse appropriate civil images that match 'Concrete Works'
+            { id: 1, image: constructionSlab, title: 'Concrete Slab Foundation', location: 'Port Infrastructure' },
+            { id: 25, image: rebarSlabLarge, title: 'Heavy Rebar Reinforcement', location: 'Foundation Works' },
+        ]
+    },
+    {
+        id: 'roads',
+        name: "Road Infrastructure Partners (Jura / GlobalGiving)",
+        icon: <FaRoad />,
+        description: "Major road rehabilitation and upgrading projects across Kenya and South Sudan.",
+        projects: [
+            { id: 12, image: asphaltPaver, title: 'Asphalt Paving', location: 'Main Highway' },
+            { id: 13, image: asphaltSpreading, title: 'Asphalt Spreading', location: 'Road Surfacing' },
+            { id: 18, image: finishedTarmacCurve, title: 'Curved Access Road', location: 'Completed Project' },
+            { id: 14, image: roadCompaction, title: 'Primary Compaction', location: 'Tarmac Layer' },
+            { id: 19, image: finishedRoadGuardrails1, title: 'Road with Guardrails', location: 'Scenic Route' },
+            { id: 22, image: roadMarkingsFinished, title: 'Road Marking', location: 'Traffic Safety' },
+            { id: 5, image: completedDrainage2, title: 'Drainage Systems', location: 'Highway Section' },
+        ]
+    },
+    {
+        id: 'buildings',
+        name: "Building & Development Partners",
+        icon: <FaBuilding />,
+        description: "Commercial and residential construction projects for County Governments and Developers.",
+        projects: [
+            { id: 28, image: warehouseBuildingFront, title: 'Modern Warehouse', location: 'Logistics Park' },
+            { id: 29, image: buildingFrameConstruction, title: 'Multi-Story Framework', location: 'Commercial Complex' },
+            { id: 26, image: rebarGridHeavy, title: 'Steel Grid Work', location: 'Construction Site' },
+            { id: 27, image: workersFoundationTanks, title: 'Foundation & Tanks', location: 'Processing Plant' },
+        ]
+    },
+    {
+        id: 'civil',
+        name: "General Civil Works",
+        icon: <FaHardHat />,
+        description: "Drainage, site preparation, and structural foundations.",
+        projects: [
+            { id: 2, image: drainageWorkers, title: 'Drainage Channel Construction', location: 'Infrastructure Project' },
+            { id: 3, image: stoneDrainage, title: 'Stone Pitching Work', location: 'Roadside Drainage' },
+            { id: 7, image: deepStoneDrainage, title: 'Deep Drainage Channel', location: 'Flood Control' },
+            { id: 9, image: roadWetting, title: 'Base Preparation', location: 'Site Preparation' },
+        ]
+    }
 ];
 
-const INITIAL_SHOW_COUNT = 2;
-
 const Projects = () => {
-    const [filter, setFilter] = useState('All');
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    const filteredProjects = filter === 'All'
-        ? projectsData
-        : projectsData.filter(project => project.category === filter);
-
-    // Show limited projects unless expanded
-    const displayedProjects = isExpanded
-        ? filteredProjects
-        : filteredProjects.slice(0, INITIAL_SHOW_COUNT);
-
-    const hasMoreProjects = filteredProjects.length > INITIAL_SHOW_COUNT;
-
-    // Reset expansion when filter changes
-    const handleFilterChange = (cat) => {
-        setFilter(cat);
-        setIsExpanded(false);
-    };
-
     return (
         <section id="projects" className="section-padding projects-section">
             <div className="container">
-                <h2 className="section-title">Featured Projects</h2>
+                <h2 className="section-title">Our Projects & Partners</h2>
+                <p className="section-subtitle" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                    Delivering excellence for our trusted clients across diverse industries.
+                </p>
 
-                <div className="projects-filter">
-                    {['All', 'Civil', 'Building', 'Roads', 'Structural', 'Electrical & Pipeline', 'CCTV & Access Control'].map(cat => (
-                        <button
-                            key={cat}
-                            className={`filter-btn ${filter === cat ? 'active' : ''}`}
-                            onClick={() => handleFilterChange(cat)}
-                        >
-                            {cat}
-                        </button>
+                <div className="client-groups">
+                    {clientGroups.map((group) => (
+                        <div key={group.id} className="client-group-section" style={{ marginBottom: '4rem' }}>
+                            <div className="group-header" style={{ marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <div style={{ fontSize: '2rem', color: 'var(--accent-green)' }}>{group.icon}</div>
+                                <div>
+                                    <h3 style={{ marginBottom: '0.2rem', fontSize: '1.5rem' }}>{group.name}</h3>
+                                    <p style={{ color: 'var(--medium-gray)' }}>{group.description}</p>
+                                </div>
+                            </div>
+
+                            <div className="projects-grid">
+                                {group.projects.map(project => (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5 }}
+                                        key={project.id}
+                                        className="project-card"
+                                    >
+                                        <div className="project-img-wrapper">
+                                            <img src={project.image} alt={project.title} />
+                                            <div className="project-overlay">
+                                                <h3>{project.title}</h3>
+                                                <p>{project.location}</p>
+                                            </div>
+                                        </div>
+                                        <div className="project-info">
+                                            <h4>{project.title}</h4>
+                                            <p>{project.location}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
-
-                <motion.div layout className="projects-grid">
-                    <AnimatePresence>
-                        {displayedProjects.map(project => (
-                            <motion.div
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                                key={project.id}
-                                className="project-card"
-                            >
-                                <div className="project-img-wrapper">
-                                    <img src={project.image} alt={project.title} />
-                                    <div className="project-overlay">
-                                        <h3>{project.title}</h3>
-                                        <p>{project.location}</p>
-                                        <span className="project-category">{project.category}</span>
-                                    </div>
-                                </div>
-                                <div className="project-info">
-                                    <h4>{project.title}</h4>
-                                    <p>{project.location}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
-
-                {hasMoreProjects && (
-                    <motion.div
-                        className="projects-expand-container"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                    >
-                        <button
-                            className="expand-btn"
-                            onClick={() => setIsExpanded(!isExpanded)}
-                        >
-                            {isExpanded ? (
-                                <>Show Less ↑</>
-                            ) : (
-                                <>Show More ({filteredProjects.length - INITIAL_SHOW_COUNT} more) ↓</>
-                            )}
-                        </button>
-                    </motion.div>
-                )}
             </div>
         </section>
     );
