@@ -24,12 +24,30 @@
 }
 
 .logo-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    /* Subtle transparent background */
+    backdrop-filter: blur(8px);
+    /* Blur effect */
+    padding: 8px 15px;
+    /* Consistent padding */
+    border-radius: 12px;
+    /* Smooth corners */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle border */
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .logo-img {
-    height: 70px;
-    /* Increased slightly for better visibility */
+    height: 60px;
+    /* Slightly adjusted to fit container */
     width: auto;
     object-fit: contain;
 }
