@@ -51,7 +51,9 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--light-gray);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background-attachment: fixed;
+  /* Parallax-like fixed background */
   color: var(--primary-blue);
   line-height: 1.6;
   overflow-x: hidden;
@@ -163,7 +165,8 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--primary-blue);
+  background: #e2e8f0;
+  /* Lighter track */
 }
 
 ::-webkit-scrollbar-thumb {
