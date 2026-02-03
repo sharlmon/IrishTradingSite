@@ -37,7 +37,7 @@
 
 @media (max-width: 480px) {
     .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
         gap: 1.5rem;
     }
 }
@@ -118,6 +118,20 @@
 .project-card:hover .project-overlay p,
 .project-card:hover .project-category {
     transform: translateY(0);
+}
+
+/* Ensure text is visible on mobile/touch without hover */
+@media (max-width: 1024px) {
+    .project-overlay {
+        opacity: 1;
+        background: rgba(15, 23, 42, 0.7);
+    }
+
+    .project-overlay h3,
+    .project-overlay p,
+    .project-category {
+        transform: translateY(0);
+    }
 }
 
 /* Project Info - Always Visible */

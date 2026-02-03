@@ -54,7 +54,7 @@ const Header = () => {
                     </Link>
                 </nav>
 
-                <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
+                <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle navigation" style={{ color: '#0f172a' }}>
                     {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                 </button>
             </div>
