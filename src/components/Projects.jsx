@@ -136,19 +136,18 @@ import kpcFireStores4 from '../assets/kpc-fire-stores-4.jpg';
 import kpcFireStores5 from '../assets/kpc-fire-stores-5.jpg';
 import kpcFireStores6 from '../assets/kpc-fire-stores-6.jpg';
 
-const kpcFireStoresImages = [kpcFireStores6, kpcFireStores1, kpcFireStores2, kpcFireStores4, kpcFireStores5]; // Start with completed shot
+const kpcFireStoresImages = [kpcFireStores1, kpcFireStores2, kpcFireStores4, kpcFireStores5]; // Start with completed shot
 
 // Import KPC Fence Images
-import kpcFence1 from '../assets/kpc-fence-1.jpg';
+import kpcFence1 from '../assets/kpc-fence-1.jpg'; // Keep import for now or remove? Instruction says removes from array. I will remove from array.
 import kpcFence2 from '../assets/kpc-fence-2.jpg';
 import kpcFence3 from '../assets/kpc-fence-3.jpg';
 import kpcFence4 from '../assets/kpc-fence-4.jpg';
 import kpcFence5 from '../assets/kpc-fence-5.jpg';
 import kpcFence6 from '../assets/kpc-fence-6.jpg';
 import kpcFence7 from '../assets/kpc-fence-7.jpg';
-import kpcFence8 from '../assets/kpc-fence-8.jpg';
 
-const kpcFenceImages = [kpcFence1, kpcFence2, kpcFence3, kpcFence4, kpcFence5, kpcFence6, kpcFence7];
+const kpcFenceImages = [kpcFence2, kpcFence3, kpcFence4, kpcFence5, kpcFence6, kpcFence7];
 
 const Projects = () => {
     return (
