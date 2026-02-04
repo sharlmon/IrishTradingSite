@@ -171,38 +171,37 @@ const Projects = () => {
                 </p>
 
                 {/* Featured Project: KPC Master Meter */}
-                <div className="featured-project" style={{ marginBottom: '5rem', background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                    <div className="featured-header" style={{ marginBottom: '2rem', borderBottom: '2px solid var(--accent-green)', paddingBottom: '1rem' }}>
-                        <span style={{ color: 'var(--accent-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.9rem' }}>Featured Project</span>
-                        <h3 style={{ fontSize: '1.8rem', color: 'var(--primary-blue)', marginTop: '0.5rem', lineHeight: '1.3' }}>
+                <div className="featured-project">
+                    <div className="featured-header">
+                        <span className="featured-label">Featured Project</span>
+                        <h3 className="featured-title">
                             Supply, Installation and Commissioning of Master Meter Proving System
                         </h3>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem', color: 'var(--medium-gray)' }}>
+                        <div className="featured-meta">
                             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaIndustry /> Kenya Pipeline Company Limited</span>
                             <span>•</span>
                             <span>Major Infrastructure Upgrade</span>
                         </div>
                     </div>
 
-                    <div className="featured-content" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
-                        <div className="project-description">
-                            <h4 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>Scope of Works</h4>
-                            <p style={{ lineHeight: '1.8', color: 'var(--dark-text)' }}>
+                    <div className="featured-content">
+                        <div className="featured-scope">
+                            <h4>Scope of Works</h4>
+                            <p>
                                 The scope of works involved the supply of critical material and equipment including <strong>prover meters, flow computers, temperature and pressure transmitters</strong>, and trucks.
                                 <br /><br />
                                 The project executed the <strong>modification of pipework</strong> to allow for the installation of meter calibration loops, followed by the comprehensive <strong>testing and commissioning</strong> of the master meter proving and verification system. This infrastructure is vital for ensuring accurate flow measurement and operational efficiency in the pipeline network.
                             </p>
                         </div>
 
-                        <div className="project-gallery" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
+                        <div className="featured-gallery">
                             {kpcImages.map((img, index) => (
                                 <motion.div
                                     key={index}
                                     whileHover={{ scale: 1.05 }}
                                     className="gallery-item"
-                                    style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}
                                 >
-                                    <img src={img} alt={`KPC Master Meter Work ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={img} alt={`KPC Master Meter Work ${index + 1}`} />
                                 </motion.div>
                             ))}
                         </div>
@@ -210,22 +209,22 @@ const Projects = () => {
                 </div>
 
                 {/* Featured Project 2: Firestore Building */}
-                <div className="featured-project" style={{ marginBottom: '5rem', background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                    <div className="featured-header" style={{ marginBottom: '2rem', borderBottom: '2px solid var(--accent-green)', paddingBottom: '1rem' }}>
-                        <span style={{ color: 'var(--accent-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.9rem' }}>Featured Project</span>
-                        <h3 style={{ fontSize: '1.8rem', color: 'var(--primary-blue)', marginTop: '0.5rem', lineHeight: '1.3' }}>
+                <div className="featured-project">
+                    <div className="featured-header">
+                        <span className="featured-label">Featured Project</span>
+                        <h3 className="featured-title">
                             Firestore Building at PS 10 – Kenya Pipeline Company Limited (Nairobi Terminal)
                         </h3>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem', color: 'var(--medium-gray)' }}>
+                        <div className="featured-meta">
                             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaBuilding /> Kenya Pipeline Company Limited</span>
                             <span>•</span>
                             <span>Civil Construction</span>
                         </div>
                     </div>
-                    <div className="featured-content" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
-                        <div className="project-description">
-                            <h4 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>Scope of Works</h4>
-                            <p style={{ lineHeight: '1.8', color: 'var(--dark-text)' }}>
+                    <div className="featured-content">
+                        <div className="featured-scope">
+                            <h4>Scope of Works</h4>
+                            <p>
                                 Comprehensive civil engineering and construction of the Firestore Building at KPC's PS 10 Nairobi Terminal. The project involved:
                                 <br /><br />
                                 • <strong>Structural Construction</strong>: Reinforced concrete foundation, slab work, and multi-story structural framing.<br />
@@ -233,15 +232,14 @@ const Projects = () => {
                                 • <strong>Infrastructure</strong>: Integration with existing terminal facilities and safety systems.
                             </p>
                         </div>
-                        <div className="project-gallery" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
+                        <div className="featured-gallery">
                             {kpcFirestoreImages.map((img, index) => (
                                 <motion.div
                                     key={index}
                                     whileHover={{ scale: 1.05 }}
                                     className="gallery-item"
-                                    style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}
                                 >
-                                    <img src={img} alt={`KPC Firestore Construction ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={img} alt={`KPC Firestore Construction ${index + 1}`} />
                                 </motion.div>
                             ))}
                         </div>
@@ -249,22 +247,22 @@ const Projects = () => {
                 </div>
 
                 {/* Featured Project 3: Fire Equipment Stores */}
-                <div className="featured-project" style={{ marginBottom: '5rem', background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                    <div className="featured-header" style={{ marginBottom: '2rem', borderBottom: '2px solid var(--accent-green)', paddingBottom: '1rem' }}>
-                        <span style={{ color: 'var(--accent-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.9rem' }}>Featured Project</span>
-                        <h3 style={{ fontSize: '1.8rem', color: 'var(--primary-blue)', marginTop: '0.5rem', lineHeight: '1.3' }}>
+                <div className="featured-project">
+                    <div className="featured-header">
+                        <span className="featured-label">Featured Project</span>
+                        <h3 className="featured-title">
                             Construction of Fire Equipment Stores at PS14 (Kipevu) – Kenya Pipeline Company Limited
                         </h3>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem', color: 'var(--medium-gray)' }}>
+                        <div className="featured-meta">
                             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaHardHat /> Kenya Pipeline Company Limited</span>
                             <span>•</span>
                             <span>Industrial Safety Infrastructure</span>
                         </div>
                     </div>
-                    <div className="featured-content" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
-                        <div className="project-description">
-                            <h4 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>Scope of Works</h4>
-                            <p style={{ lineHeight: '1.8', color: 'var(--dark-text)' }}>
+                    <div className="featured-content">
+                        <div className="featured-scope">
+                            <h4>Scope of Works</h4>
+                            <p>
                                 Specialized construction of critical safety infrastructure at KPC's Kipevu Terminal (PS14). The project delivered:
                                 <br /><br />
                                 • <strong>Purpose-Built Storage</strong>: Secure, accessible housing for high-priority fire suppression equipment.<br />
@@ -272,15 +270,14 @@ const Projects = () => {
                                 • <strong>Site Integration</strong>: Seamless connectivity with existing emergency response routes and facilities.
                             </p>
                         </div>
-                        <div className="project-gallery" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
+                        <div className="featured-gallery">
                             {kpcFireStoresImages.map((img, index) => (
                                 <motion.div
                                     key={index}
                                     whileHover={{ scale: 1.05 }}
                                     className="gallery-item"
-                                    style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}
                                 >
-                                    <img src={img} alt={`Fire Equipment Store Construction ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={img} alt={`Fire Equipment Store Construction ${index + 1}`} />
                                 </motion.div>
                             ))}
                         </div>
@@ -288,22 +285,22 @@ const Projects = () => {
                 </div>
 
                 {/* Featured Project 4: Security Fence */}
-                <div className="featured-project" style={{ marginBottom: '5rem', background: '#f8fafc', padding: '2rem', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-                    <div className="featured-header" style={{ marginBottom: '2rem', borderBottom: '2px solid var(--accent-green)', paddingBottom: '1rem' }}>
-                        <span style={{ color: 'var(--accent-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.9rem' }}>Featured Project</span>
-                        <h3 style={{ fontSize: '1.8rem', color: 'var(--primary-blue)', marginTop: '0.5rem', lineHeight: '1.3' }}>
+                <div className="featured-project">
+                    <div className="featured-header">
+                        <span className="featured-label">Featured Project</span>
+                        <h3 className="featured-title">
                             Security Fence Around Port Reitz Tank Farm (Kipevu) – KPC
                         </h3>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem', color: 'var(--medium-gray)' }}>
+                        <div className="featured-meta">
                             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaIndustry /> Kenya Pipeline Company Limited</span>
                             <span>•</span>
                             <span>Security Infrastructure</span>
                         </div>
                     </div>
-                    <div className="featured-content" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem' }}>
-                        <div className="project-description">
-                            <h4 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>Scope of Works</h4>
-                            <p style={{ lineHeight: '1.8', color: 'var(--dark-text)' }}>
+                    <div className="featured-content">
+                        <div className="featured-scope">
+                            <h4>Scope of Works</h4>
+                            <p>
                                 Enhancement of perimeter security for the Port Reitz Tank Farm. The project scope included:
                                 <br /><br />
                                 • <strong>High-Security Fencing</strong>: Installation of robust fencing solutions to secure strategic assets.<br />
@@ -311,15 +308,14 @@ const Projects = () => {
                                 • <strong>Perimeter Hardening</strong>: Ensuring full compliance with industrial security standards for sensitive energy infrastructure.
                             </p>
                         </div>
-                        <div className="project-gallery" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
+                        <div className="featured-gallery">
                             {kpcFenceImages.map((img, index) => (
                                 <motion.div
                                     key={index}
                                     whileHover={{ scale: 1.05 }}
                                     className="gallery-item"
-                                    style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}
                                 >
-                                    <img src={img} alt={`Security Fence Construction ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={img} alt={`Security Fence Construction ${index + 1}`} />
                                 </motion.div>
                             ))}
                         </div>
