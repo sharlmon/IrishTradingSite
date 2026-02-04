@@ -324,38 +324,40 @@ const Projects = () => {
 
                 <div className="client-groups">
                     {clientGroups.map((group) => (
-                        <div key={group.id} className="client-group-section" style={{ marginBottom: '4rem' }}>
-                            <div className="group-header" style={{ marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <div style={{ fontSize: '2rem', color: 'var(--accent-green)' }}>{group.icon}</div>
-                                <div>
-                                    <h3 style={{ marginBottom: '0.2rem', fontSize: '1.5rem' }}>{group.name}</h3>
-                                    <p style={{ color: 'var(--medium-gray)' }}>{group.description}</p>
+                        <div key={group.id} className="featured-project">
+                            <div className="featured-header">
+                                <span className="featured-label">Project Partner</span>
+                                <h3 className="featured-title">{group.name}</h3>
+                                <div className="featured-meta">
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.1rem', color: 'var(--accent-green)' }}>
+                                        {group.icon}
+                                    </span>
+                                    <span>•</span>
+                                    <span>Strategic Partnership</span>
                                 </div>
                             </div>
 
-                            <div className="projects-grid">
-                                {group.projects.map(project => (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.5 }}
-                                        key={project.id}
-                                        className="project-card"
-                                    >
-                                        <div className="project-img-wrapper">
+                            <div className="featured-content">
+                                <div className="featured-scope">
+                                    <h4>Scope of Partnership</h4>
+                                    <p>{group.description}</p>
+                                </div>
+
+                                <div className="featured-gallery">
+                                    {group.projects.map(project => (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.5 }}
+                                            key={project.id}
+                                            whileHover={{ scale: 1.05 }}
+                                            className="gallery-item"
+                                        >
                                             <img src={project.image} alt={project.title} />
-                                            <div className="project-overlay">
-                                                <h3>{project.title}</h3>
-                                                <p>{project.location}</p>
-                                            </div>
-                                        </div>
-                                        <div className="project-info">
-                                            <h4>{project.title}</h4>
-                                            <p>{project.location}</p>
-                                        </div>
-                                    </motion.div>
-                                ))}
+                                        </motion.div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}
