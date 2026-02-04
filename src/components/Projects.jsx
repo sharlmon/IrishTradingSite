@@ -141,11 +141,9 @@ const kpcFirestoreImages = [
 ];
 
 // Import KPC Fire Stores Images
-import kpcFireStores1 from '../assets/kpc-fire-stores-1.jpg';
-import kpcFireStores2 from '../assets/kpc-fire-stores-2.jpg';
 import kpcFireStoresFront from '../assets/kpc-fire-stores-completed-front.jpg';
 
-const kpcFireStoresImages = [kpcFireStoresFront, kpcFireStores1, kpcFireStores2]; // Start with completed shot
+const kpcFireStoresImages = [kpcFireStoresFront]; // Start with completed shot
 
 // Import KPC Fence Images
 import kpcFence2 from '../assets/kpc-fence-2.jpg';
