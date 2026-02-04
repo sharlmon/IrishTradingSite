@@ -124,8 +124,6 @@ import kpcFirestore1 from '../assets/kpc-firestore-1.jpg';
 import kpcFirestore2 from '../assets/kpc-firestore-2.jpg';
 import kpcFirestore3 from '../assets/kpc-firestore-3.jpg';
 import kpcFirestore4 from '../assets/kpc-firestore-4.jpg';
-import kpcFirestore5 from '../assets/kpc-firestore-5.jpg';
-
 const kpcFirestoreImages = [kpcFirestore1, kpcFirestore2, kpcFirestore3, kpcFirestore4];
 
 // Import KPC Fire Stores Images
