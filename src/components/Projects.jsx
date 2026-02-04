@@ -49,23 +49,12 @@ import cctvInstallation from '../assets/cctv-installation.png';
 import accessControlSystem from '../assets/access-control-system.png';
 
 const clientGroups = [
+    // KPC Group removed as it is now covered by the detailed Featured Projects above
+    /* 
     {
-        id: 'kpc',
-        name: "Kenya Pipeline Company (KPC)",
-        icon: <FaIndustry />,
-        description: "Partnering on critical infrastructure, security systems, and pipeline instrumentation.",
-        projects: [
-            { id: 30, image: pipelineInstrumentation, title: 'Pipeline Instrumentation', location: 'KPC Oil Pipeline' },
-            { id: 31, image: junctionBoxWiring, title: 'Industrial Junction Box', location: 'Control Systems' },
-            { id: 32, image: controlPanelsNight, title: 'Control Panel Installation', location: 'Pipeline Station' },
-            { id: 33, image: flowComputerDisplay, title: 'Flow Computer Systems', location: 'Metering Station' },
-            { id: 34, image: pipelineValveGauge, title: 'Pipeline Valve & Gauge', location: 'Oil & Gas Facility' },
-            { id: 35, image: meteringSkidPs14, title: 'PS14 Metering Skid', location: 'Kenya Pipeline Company' },
-            { id: 36, image: densityMeterInstallation, title: 'Density Meter Installation', location: 'Pipeline Station' },
-            { id: 37, image: flowMeterBlue, title: 'Flow Meter Assembly', location: 'Morendat Institute' },
-            { id: 39, image: controlPanelWiring, title: 'Control Panel Wiring', location: 'Instrumentation Skid' },
-        ]
-    },
+        id: 'kpc', ... (removed to avoid duplication)
+    }, 
+    */
     {
         id: 'kpa',
         name: "Kenya Ports Authority (KPA)",
