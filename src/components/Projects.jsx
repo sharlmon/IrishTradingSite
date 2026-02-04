@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBuilding, FaRoad, FaIndustry, FaHome, FaGlobe, FaAnchor, FaHardHat } from 'react-icons/fa';
+import {
+    FaBuilding, FaRoad, FaIndustry, FaHome, FaGlobe, FaAnchor, FaHardHat,
+    FaTimes, FaInfoCircle, FaChevronLeft, FaChevronRight, FaSearchPlus
+} from 'react-icons/fa';
 import '../styles/Projects.css';
 
-// Import project images
+// --- Image Imports ---
+// Civil / Roads
 import constructionSlab from '../assets/construction-slab.jpg';
 import drainageWorkers from '../assets/drainage-workers.jpg';
 import stoneDrainage from '../assets/stone-drainage.jpg';
@@ -48,27 +52,153 @@ import controlPanelWiring from '../assets/control-panel-wiring.jpg';
 import cctvInstallation from '../assets/cctv-installation.png';
 import accessControlSystem from '../assets/access-control-system.png';
 
-const clientGroups = [
-    // KPC Group removed as it is now covered by the detailed Featured Projects above
-    /* 
+// KPC Specific Imports
+import kpcMeter1 from '../assets/kpc-meter-1.jpg';
+import kpcMeter2 from '../assets/kpc-meter-2.jpg';
+import kpcMeter3 from '../assets/kpc-meter-3.jpg';
+import kpcMeter4 from '../assets/kpc-meter-4.jpg';
+import kpcMeter5 from '../assets/kpc-meter-5.jpg';
+import kpcMeter6 from '../assets/kpc-meter-6.jpg';
+import kpcMeter7 from '../assets/kpc-meter-7.jpg';
+import kpcMeter8 from '../assets/kpc-meter-8.jpg';
+
+import kpcFirestore1 from '../assets/kpc-firestore-1.jpg';
+import kpcFirestore2 from '../assets/kpc-firestore-2.jpg';
+import kpcFirestore3 from '../assets/kpc-firestore-3.jpg';
+import kpcFirestore4 from '../assets/kpc-firestore-4.jpg';
+import kpcFirestoreRebarDeck from '../assets/kpc-firestore-rebar-deck.jpg';
+import kpcFirestoreConcreteMixer from '../assets/kpc-firestore-concrete-mixer.jpg';
+import kpcFirestoreRebarWorkers from '../assets/kpc-firestore-rebar-workers.jpg';
+import kpcFirestoreDeckOverview from '../assets/kpc-firestore-deck-overview.jpg';
+
+import kpcFireStoresFront from '../assets/kpc-fire-stores-completed-front.jpg';
+
+import kpcFence2 from '../assets/kpc-fence-2.jpg';
+import kpcFence4 from '../assets/kpc-fence-4.jpg';
+import kpcFence5 from '../assets/kpc-fence-5.jpg';
+import kpcFence6 from '../assets/kpc-fence-6.jpg';
+import kpcFence7 from '../assets/kpc-fence-7.jpg';
+
+// --- Data Arrays ---
+
+const featuredProjects = [
     {
-        id: 'kpc', ... (removed to avoid duplication)
-    }, 
-    */
+        id: 'kpc-master-meter',
+        category: 'industrial',
+        label: 'Featured Project',
+        title: 'Supply, Installation and Commissioning of Master Meter Proving System',
+        client: 'Kenya Pipeline Company Limited',
+        location: 'Major Infrastructure Upgrade',
+        icon: <FaIndustry />,
+        description: (
+            <>
+                The scope of works involved the supply of critical material and equipment including <strong>prover meters, flow computers, temperature and pressure transmitters</strong>, and trucks.
+                <br /><br />
+                The project executed the <strong>modification of pipework</strong> to allow for the installation of meter calibration loops, followed by the comprehensive <strong>testing and commissioning</strong> of the master meter proving and verification system. This infrastructure is vital for ensuring accurate flow measurement and operational efficiency in the pipeline network.
+            </>
+        ),
+        techSpecs: {
+            timeline: "12 Months",
+            materials: "Prover Meters, Flow Computers, Pressure Transmitters",
+            status: "Commissioned",
+            challenges: "Live Pipeline Integration"
+        },
+        images: [kpcMeter1, kpcMeter2, kpcMeter3, kpcMeter4, kpcMeter5, kpcMeter6, kpcMeter7, kpcMeter8]
+    },
+    {
+        id: 'kpc-firestore',
+        category: 'civil',
+        label: 'Featured Project',
+        title: 'Firestore Building at PS 10 – Nairobi Terminal',
+        client: 'Kenya Pipeline Company Limited',
+        location: 'Civil Construction',
+        icon: <FaBuilding />,
+        description: (
+            <>
+                Comprehensive civil engineering and construction of the Firestore Building at KPC's PS 10 Nairobi Terminal. The project involved:
+                <br /><br />
+                • <strong>Structural Construction</strong>: Reinforced concrete foundation, slab work, and multi-story structural framing.<br />
+                • <strong>Site Preparation</strong>: Extensive rebar work and formwork installation.<br />
+                • <strong>Infrastructure</strong>: Integration with existing terminal facilities and safety systems.
+            </>
+        ),
+        techSpecs: {
+            timeline: "8 Months",
+            materials: "Reinforced Concrete, Structural Steel",
+            area: "450 sqm",
+            features: "Multi-story, Safety Compliant"
+        },
+        images: [
+            kpcFirestore1, kpcFirestore2, kpcFirestore3, kpcFirestore4,
+            kpcFirestoreRebarDeck, kpcFirestoreConcreteMixer, kpcFirestoreRebarWorkers, kpcFirestoreDeckOverview
+        ]
+    },
+    {
+        id: 'kpc-firestores-ps14',
+        category: 'civil',
+        label: 'Featured Project',
+        title: 'Construction of Fire Equipment Stores at PS14 (Kipevu)',
+        client: 'Kenya Pipeline Company Limited',
+        location: 'Industrial Safety Infrastructure',
+        icon: <FaHardHat />,
+        description: (
+            <>
+                Specialized construction of critical safety infrastructure at KPC's Kipevu Terminal (PS14). The project delivered:
+                <br /><br />
+                • <strong>Purpose-Built Storage</strong>: Secure, accessible housing for high-priority fire suppression equipment.<br />
+                • <strong>Structural Integrity</strong>: Reinforced masonry and steel roofing designed to withstand industrial conditions.<br />
+                • <strong>Site Integration</strong>: Seamless connectivity with existing emergency response routes and facilities.
+            </>
+        ),
+        techSpecs: {
+            timeline: "6 Months",
+            materials: "Reinforced Masonry, Steel Roofing",
+            access: "Emergency Response Routes",
+            purpose: "Safety Equipment Storage"
+        },
+        images: [kpcFireStoresFront]
+    },
+    {
+        id: 'kpc-security-fence',
+        category: 'security',
+        label: 'Featured Project',
+        title: 'Security Fence Around Port Reitz Tank Farm (Kipevu)',
+        client: 'Kenya Pipeline Company Limited',
+        location: 'Security Infrastructure',
+        icon: <FaIndustry />,
+        description: (
+            <>
+                Enhancement of perimeter security for the Port Reitz Tank Farm. The project scope included:
+                <br /><br />
+                • <strong>High-Security Fencing</strong>: Installation of robust fencing solutions to secure strategic assets.<br />
+                • <strong>Civil Works</strong>: Concrete trenching, reinforcement for fence posts, and ground stabilization.<br />
+                • <strong>Perimeter Hardening</strong>: Ensuring full compliance with industrial security standards for sensitive energy infrastructure.
+            </>
+        ),
+        techSpecs: {
+            timeline: "4 Months",
+            materials: "High-Tensile Fencing, Concrete Trenching",
+            length: "Perimeter Coverage",
+            compliance: "Industrial Security Standards"
+        },
+        images: [kpcFence2, kpcFence4, kpcFence5, kpcFence6, kpcFence7]
+    }
+];
+
+const clientGroups = [
     {
         id: 'kpa',
         name: "Kenya Ports Authority (KPA)",
         icon: <FaAnchor />,
         description: "Framework agreement for concrete works and port infrastructure.",
         projects: [
-            // Placeholder or reuse appropriate civil images that match 'Concrete Works'
             { id: 1, image: constructionSlab, title: 'Concrete Slab Foundation', location: 'Port Infrastructure' },
             { id: 25, image: rebarSlabLarge, title: 'Heavy Rebar Reinforcement', location: 'Foundation Works' },
         ]
     },
     {
         id: 'roads',
-        name: "Juba Infrastructure Projects (South Sudan)",
+        name: "Juba Infrastructure Projects",
         icon: <FaRoad />,
         description: "Road rehabilitation and upgrading projects in Juba, partnering with Jura / GlobalGiving.",
         projects: [
@@ -107,217 +237,113 @@ const clientGroups = [
     }
 ];
 
-// Import KPC Master Meter Images
-import kpcMeter1 from '../assets/kpc-meter-1.jpg';
-import kpcMeter2 from '../assets/kpc-meter-2.jpg';
-import kpcMeter3 from '../assets/kpc-meter-3.jpg';
-import kpcMeter4 from '../assets/kpc-meter-4.jpg';
-import kpcMeter5 from '../assets/kpc-meter-5.jpg';
-import kpcMeter6 from '../assets/kpc-meter-6.jpg';
-import kpcMeter7 from '../assets/kpc-meter-7.jpg';
-import kpcMeter8 from '../assets/kpc-meter-8.jpg';
-
-const kpcImages = [kpcMeter1, kpcMeter2, kpcMeter3, kpcMeter4, kpcMeter5, kpcMeter6, kpcMeter7, kpcMeter8];
-
-// Import KPC Firestore Images
-import kpcFirestore1 from '../assets/kpc-firestore-1.jpg';
-import kpcFirestore2 from '../assets/kpc-firestore-2.jpg';
-import kpcFirestore3 from '../assets/kpc-firestore-3.jpg';
-import kpcFirestore4 from '../assets/kpc-firestore-4.jpg';
-import kpcFirestoreRebarDeck from '../assets/kpc-firestore-rebar-deck.jpg';
-import kpcFirestoreConcreteMixer from '../assets/kpc-firestore-concrete-mixer.jpg';
-import kpcFirestoreRebarWorkers from '../assets/kpc-firestore-rebar-workers.jpg';
-import kpcFirestoreDeckOverview from '../assets/kpc-firestore-deck-overview.jpg';
-
-const kpcFirestoreImages = [
-    kpcFirestore1,
-    kpcFirestore2,
-    kpcFirestore3,
-    kpcFirestore4,
-    kpcFirestoreRebarDeck,
-    kpcFirestoreConcreteMixer,
-    kpcFirestoreRebarWorkers,
-    kpcFirestoreDeckOverview
-];
-
-// Import KPC Fire Stores Images
-import kpcFireStoresFront from '../assets/kpc-fire-stores-completed-front.jpg';
-
-const kpcFireStoresImages = [kpcFireStoresFront]; // Start with completed shot
-
-// Import KPC Fence Images
-import kpcFence2 from '../assets/kpc-fence-2.jpg';
-import kpcFence4 from '../assets/kpc-fence-4.jpg';
-import kpcFence5 from '../assets/kpc-fence-5.jpg';
-import kpcFence6 from '../assets/kpc-fence-6.jpg';
-import kpcFence7 from '../assets/kpc-fence-7.jpg';
-
-const kpcFenceImages = [kpcFence2, kpcFence4, kpcFence5, kpcFence6, kpcFence7];
-
 const Projects = () => {
+    const [filter, setFilter] = useState('all');
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [activeProject, setActiveProject] = useState(null);
+
+    // Filter Logic
+    const filteredProjects = featuredProjects.filter(project =>
+        filter === 'all' ? true : project.category === filter
+    );
+
+    // Lightbox Logic
+    const openLightbox = (image) => setSelectedImage(image);
+    const closeLightbox = () => setSelectedImage(null);
+
+    // Modal Logic
+    const openModal = (project) => setActiveProject(project);
+    const closeModal = () => setActiveProject(null);
+
     return (
         <section id="projects" className="section-padding projects-section">
             <div className="container">
                 <h2 className="section-title">Our Projects & Partners</h2>
-                <p className="section-subtitle" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                <p className="section-subtitle" style={{ textAlign: 'center', marginBottom: '3rem' }}>
                     Delivering excellence for our trusted clients across diverse industries.
                 </p>
 
-                {/* Featured Project: KPC Master Meter */}
-                <div className="featured-project">
-                    <div className="featured-header">
-                        <span className="featured-label">Featured Project</span>
-                        <h3 className="featured-title">
-                            Supply, Installation and Commissioning of Master Meter Proving System
-                        </h3>
-                        <div className="featured-meta">
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaIndustry /> Kenya Pipeline Company Limited</span>
-                            <span>•</span>
-                            <span>Major Infrastructure Upgrade</span>
-                        </div>
-                    </div>
-
-                    <div className="featured-content">
-                        <div className="featured-scope">
-                            <h4>Scope of Works</h4>
-                            <p>
-                                The scope of works involved the supply of critical material and equipment including <strong>prover meters, flow computers, temperature and pressure transmitters</strong>, and trucks.
-                                <br /><br />
-                                The project executed the <strong>modification of pipework</strong> to allow for the installation of meter calibration loops, followed by the comprehensive <strong>testing and commissioning</strong> of the master meter proving and verification system. This infrastructure is vital for ensuring accurate flow measurement and operational efficiency in the pipeline network.
-                            </p>
-                        </div>
-
-                        <div className="featured-gallery">
-                            {kpcImages.map((img, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="gallery-item"
-                                >
-                                    <img src={img} alt={`KPC Master Meter Work ${index + 1}`} />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
+                {/* --- Filter Bar --- */}
+                <div className="projects-filter">
+                    {['all', 'industrial', 'civil', 'security'].map((category) => (
+                        <button
+                            key={category}
+                            className={`filter-btn ${filter === category ? 'active' : ''}`}
+                            onClick={() => setFilter(category)}
+                        >
+                            {category.charAt(0).toUpperCase() + category.slice(1)}
+                        </button>
+                    ))}
                 </div>
 
-                {/* Featured Project 2: Firestore Building */}
-                <div className="featured-project">
-                    <div className="featured-header">
-                        <span className="featured-label">Featured Project</span>
-                        <h3 className="featured-title">
-                            Firestore Building at PS 10 – Kenya Pipeline Company Limited (Nairobi Terminal)
-                        </h3>
-                        <div className="featured-meta">
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaBuilding /> Kenya Pipeline Company Limited</span>
-                            <span>•</span>
-                            <span>Civil Construction</span>
-                        </div>
-                    </div>
-                    <div className="featured-content">
-                        <div className="featured-scope">
-                            <h4>Scope of Works</h4>
-                            <p>
-                                Comprehensive civil engineering and construction of the Firestore Building at KPC's PS 10 Nairobi Terminal. The project involved:
-                                <br /><br />
-                                • <strong>Structural Construction</strong>: Reinforced concrete foundation, slab work, and multi-story structural framing.<br />
-                                • <strong>Site Preparation</strong>: Extensive rebar work and formwork installation.<br />
-                                • <strong>Infrastructure</strong>: Integration with existing terminal facilities and safety systems.
-                            </p>
-                        </div>
-                        <div className="featured-gallery">
-                            {kpcFirestoreImages.map((img, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="gallery-item"
-                                >
-                                    <img src={img} alt={`KPC Firestore Construction ${index + 1}`} />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
+                {/* --- Featured Projects List with AnimatePresence --- */}
+                <div className="featured-projects-list">
+                    <AnimatePresence mode="wait">
+                        {filteredProjects.map((project) => (
+                            <motion.div
+                                key={project.id}
+                                layout
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.5 }}
+                                className="featured-project"
+                            >
+                                <div className="featured-header">
+                                    <span className="featured-label">{project.label}</span>
+                                    <h3 className="featured-title">{project.title}</h3>
+                                    <div className="featured-meta">
+                                        <div className="meta-item">{project.icon} <span>{project.client}</span></div>
+                                        <div className="meta-item">•</div>
+                                        <div className="meta-item"><span>{project.location}</span></div>
+                                    </div>
+                                </div>
+
+                                <div className="featured-content">
+                                    <div className="featured-scope">
+                                        <h4>Scope of Works</h4>
+                                        <p>{project.description}</p>
+                                        <button
+                                            className="view-specs-btn"
+                                            onClick={() => openModal(project)}
+                                        >
+                                            <FaInfoCircle /> View Tech Specs
+                                        </button>
+                                    </div>
+
+                                    <div className="featured-gallery">
+                                        {project.images.map((img, index) => (
+                                            <motion.div
+                                                key={index}
+                                                className="gallery-item"
+                                                whileHover={{ scale: 1.02 }}
+                                                onClick={() => openLightbox(img)}
+                                            >
+                                                <img src={img} alt={`${project.title} ${index + 1}`} loading="lazy" />
+                                                <div className="gallery-overlay">
+                                                    <FaSearchPlus style={{ color: 'white', fontSize: '1.5rem' }} />
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
                 </div>
 
-                {/* Featured Project 3: Fire Equipment Stores */}
-                <div className="featured-project">
-                    <div className="featured-header">
-                        <span className="featured-label">Featured Project</span>
-                        <h3 className="featured-title">
-                            Construction of Fire Equipment Stores at PS14 (Kipevu) – Kenya Pipeline Company Limited
-                        </h3>
-                        <div className="featured-meta">
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaHardHat /> Kenya Pipeline Company Limited</span>
-                            <span>•</span>
-                            <span>Industrial Safety Infrastructure</span>
-                        </div>
-                    </div>
-                    <div className="featured-content">
-                        <div className="featured-scope">
-                            <h4>Scope of Works</h4>
-                            <p>
-                                Specialized construction of critical safety infrastructure at KPC's Kipevu Terminal (PS14). The project delivered:
-                                <br /><br />
-                                • <strong>Purpose-Built Storage</strong>: Secure, accessible housing for high-priority fire suppression equipment.<br />
-                                • <strong>Structural Integrity</strong>: Reinforced masonry and steel roofing designed to withstand industrial conditions.<br />
-                                • <strong>Site Integration</strong>: Seamless connectivity with existing emergency response routes and facilities.
-                            </p>
-                        </div>
-                        <div className="featured-gallery">
-                            {kpcFireStoresImages.map((img, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="gallery-item"
-                                >
-                                    <img src={img} alt={`Fire Equipment Store Construction ${index + 1}`} />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Featured Project 4: Security Fence */}
-                <div className="featured-project">
-                    <div className="featured-header">
-                        <span className="featured-label">Featured Project</span>
-                        <h3 className="featured-title">
-                            Security Fence Around Port Reitz Tank Farm (Kipevu) – KPC
-                        </h3>
-                        <div className="featured-meta">
-                            <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><FaIndustry /> Kenya Pipeline Company Limited</span>
-                            <span>•</span>
-                            <span>Security Infrastructure</span>
-                        </div>
-                    </div>
-                    <div className="featured-content">
-                        <div className="featured-scope">
-                            <h4>Scope of Works</h4>
-                            <p>
-                                Enhancement of perimeter security for the Port Reitz Tank Farm. The project scope included:
-                                <br /><br />
-                                • <strong>High-Security Fencing</strong>: Installation of robust fencing solutions to secure strategic assets.<br />
-                                • <strong>Civil Works</strong>: Concrete trenching, reinforcement for fence posts, and ground stabilization.<br />
-                                • <strong>Perimeter Hardening</strong>: Ensuring full compliance with industrial security standards for sensitive energy infrastructure.
-                            </p>
-                        </div>
-                        <div className="featured-gallery">
-                            {kpcFenceImages.map((img, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileHover={{ scale: 1.05 }}
-                                    className="gallery-item"
-                                >
-                                    <img src={img} alt={`Security Fence Construction ${index + 1}`} />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
+                {/* --- Client Groups (Static for now, but animated entry) --- */}
                 <div className="client-groups">
                     {clientGroups.map((group) => (
-                        <div key={group.id} className="featured-project">
+                        <motion.div
+                            key={group.id}
+                            className="featured-project"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
                             <div className="featured-header">
                                 <span className="featured-label">Project Partner</span>
                                 <h3 className="featured-title">{group.name}</h3>
@@ -339,26 +365,86 @@ const Projects = () => {
                                 <div className="featured-gallery">
                                     {group.projects.map(project => (
                                         <motion.div
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.5 }}
                                             key={project.id}
                                             whileHover={{ scale: 1.05 }}
                                             className="gallery-item"
+                                            onClick={() => openLightbox(project.image)}
                                         >
-                                            <img src={project.image} alt={project.title} />
+                                            <img src={project.image} alt={project.title} loading="lazy" />
+                                            <div className="gallery-overlay">
+                                                <FaSearchPlus style={{ color: 'white', fontSize: '1.5rem' }} />
+                                            </div>
                                         </motion.div>
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
+
+            {/* --- Modals & Overlays --- */}
+
+            {/* Tech Specs Modal */}
+            <AnimatePresence>
+                {activeProject && (
+                    <motion.div
+                        className="modal-backdrop"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={closeModal}
+                    >
+                        <motion.div
+                            className="modal-content"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="modal-header">
+                                <h3>Technical Specifications</h3>
+                                <button className="modal-close" onClick={closeModal}><FaTimes /></button>
+                            </div>
+                            <div className="modal-body">
+                                <h4 style={{ marginBottom: '1.5rem', color: 'var(--primary-blue)' }}>{activeProject.title}</h4>
+                                <div className="spec-grid">
+                                    {Object.entries(activeProject.techSpecs).map(([key, value]) => (
+                                        <div key={key} className="spec-item">
+                                            <h5>{key}</h5>
+                                            <p>{value}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Image Lightbox */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        className="lightbox-backdrop"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={closeLightbox}
+                    >
+                        <button className="lightbox-close" onClick={closeLightbox}><FaTimes /></button>
+                        <motion.div
+                            className="lightbox-content"
+                            initial={{ scale: 0.9 }}
+                            animate={{ scale: 1 }}
+                        >
+                            <img src={selectedImage} alt="Fullscreen View" />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
 
 export default Projects;
-
