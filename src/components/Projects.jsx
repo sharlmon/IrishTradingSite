@@ -124,7 +124,21 @@ import kpcFirestore1 from '../assets/kpc-firestore-1.jpg';
 import kpcFirestore2 from '../assets/kpc-firestore-2.jpg';
 import kpcFirestore3 from '../assets/kpc-firestore-3.jpg';
 import kpcFirestore4 from '../assets/kpc-firestore-4.jpg';
-const kpcFirestoreImages = [kpcFirestore1, kpcFirestore2, kpcFirestore3, kpcFirestore4];
+import kpcFirestoreRebarDeck from '../assets/kpc-firestore-rebar-deck.jpg';
+import kpcFirestoreConcreteMixer from '../assets/kpc-firestore-concrete-mixer.jpg';
+import kpcFirestoreRebarWorkers from '../assets/kpc-firestore-rebar-workers.jpg';
+import kpcFirestoreDeckOverview from '../assets/kpc-firestore-deck-overview.jpg';
+
+const kpcFirestoreImages = [
+    kpcFirestore1,
+    kpcFirestore2,
+    kpcFirestore3,
+    kpcFirestore4,
+    kpcFirestoreRebarDeck,
+    kpcFirestoreConcreteMixer,
+    kpcFirestoreRebarWorkers,
+    kpcFirestoreDeckOverview
+];
 
 // Import KPC Fire Stores Images
 import kpcFireStores1 from '../assets/kpc-fire-stores-1.jpg';
