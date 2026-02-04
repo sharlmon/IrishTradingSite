@@ -136,7 +136,7 @@ import kpcFireStores4 from '../assets/kpc-fire-stores-4.jpg';
 import kpcFireStores5 from '../assets/kpc-fire-stores-5.jpg';
 import kpcFireStores6 from '../assets/kpc-fire-stores-6.jpg';
 
-const kpcFireStoresImages = [kpcFireStores1, kpcFireStores2, kpcFireStores4]; // Start with completed shot
+const kpcFireStoresImages = [kpcFireStores1, kpcFireStores2]; // Start with completed shot
 
 // Import KPC Fence Images
 import kpcFence1 from '../assets/kpc-fence-1.jpg'; // Keep import for now or remove? Instruction says removes from array. I will remove from array.
